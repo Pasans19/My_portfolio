@@ -1,70 +1,162 @@
-# Getting Started with Create React App
+# Personal Portfolio Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive portfolio website built with React.js featuring a contact form that allows visitors to send messages directly to your email.
 
-## Available Scripts
+![Portfolio Website Screenshot](/api/placeholder/800/400)
 
-In the project directory, you can run:
+## 🌟 Features
 
-### `npm start`
+- **Responsive Design**: Works seamlessly on all devices (mobile, tablet, desktop)
+- **Interactive UI**: Modern interface with smooth animations and transitions
+- **Contact Form**: Integrated with EmailJS to receive messages directly to your inbox
+- **Project Showcase**: Beautifully display your projects with filterable categories
+- **Social Media Integration**: Connect with visitors through your social profiles
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 📋 Table of Contents
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [Demo](#demo)
+- [Technologies](#technologies)
+- [Setup and Installation](#setup-and-installation)
+- [Contact Form Configuration](#contact-form-configuration)
+- [Project Structure](#project-structure)
+- [Deployment](#deployment)
+- [Contributing](#contributing)
+- [License](#license)
 
-### `npm test`
+## 🚀 Demo
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+View the live demo: [Your Portfolio URL](https://your-portfolio-url.com)
 
-### `npm run build`
+## 💻 Technologies
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This project is built with:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- React.js
+- CSS3 with custom animations
+- EmailJS for form submission
+- React Icons
+- React Router
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## ⚙️ Setup and Installation
 
-### `npm run eject`
+Follow these steps to set up the project locally:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/portfolio-website.git
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Navigate to the project directory
+cd portfolio-website
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Install dependencies
+npm install
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Start the development server
+npm start
+```
 
-## Learn More
+The application should now be running on [http://localhost:3000](http://localhost:3000)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 📬 Contact Form Configuration
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The contact form uses EmailJS to send messages directly to your email. To set it up:
 
-### Code Splitting
+1. Create a free account at [EmailJS](https://www.emailjs.com/)
+2. Create a new email service (connect your Gmail, Outlook, etc.)
+3. Create an email template with variables that match your form fields:
+   - `{{name}}` - Sender's name
+   - `{{email}}` - Sender's email
+   - `{{subject}}` - Message subject
+   - `{{message}}` - Message content
+4. Get your service ID, template ID, and public key
+5. Update the configuration in `src/components/Contact.js`:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```javascript
+emailjs.sendForm(
+  'YOUR_SERVICE_ID',      // Replace with your service ID
+  'YOUR_TEMPLATE_ID',     // Replace with your template ID
+  form.current,
+  'YOUR_PUBLIC_KEY'       // Replace with your public key
+)
+```
 
-### Analyzing the Bundle Size
+## 📁 Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
+portfolio-website/
+├── public/
+│   ├── index.html
+│   ├── favicon.ico
+│   └── ...
+├── src/
+│   ├── components/
+│   │   ├── Contact.js
+│   │   ├── Footer.js
+│   │   ├── Header.js
+│   │   ├── Projects.js
+│   │   └── ...
+│   ├── styles/
+│   │   ├── contact.css
+│   │   ├── footer.css
+│   │   └── ...
+│   ├── assets/
+│   │   ├── images/
+│   │   └── ...
+│   ├── App.js
+│   ├── index.js
+│   └── ...
+├── package.json
+└── README.md
+```
 
-### Making a Progressive Web App
+## 🌐 Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+The site can be deployed using various platforms:
 
-### Advanced Configuration
+### Netlify
+```bash
+# Install Netlify CLI
+npm install -g netlify-cli
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+# Build the project
+npm run build
 
-### Deployment
+# Deploy to Netlify
+netlify deploy
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Vercel
+```bash
+# Install Vercel CLI
+npm install -g vercel
 
-### `npm run build` fails to minify
+# Deploy to Vercel
+vercel
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🤝 Contributing
+
+Contributions are welcome! If you'd like to contribute:
+
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature-branch`)
+3. Make your changes
+4. Commit your changes (`git commit -m 'Add some feature'`)
+5. Push to the branch (`git push origin feature-branch`)
+6. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 📞 Contact
+
+Pasan Ransika - [pasansransika@gmail.com](mailto:pasansransika@gmail.com)
+
+Project Link: [https://github.com/yourusername/portfolio-website](https://github.com/yourusername/portfolio-website)
+
+---
+
+Made with ❤️ by [Your Name](https://your-portfolio-url.com)
