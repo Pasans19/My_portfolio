@@ -2,7 +2,7 @@
 
 A modern, responsive portfolio website built with React.js featuring a contact form that allows visitors to send messages directly to your email.
 
-![Portfolio Website Screenshot](/api/placeholder/800/400)
+
 
 ## 🌟 Features
 
@@ -159,4 +159,4 @@ Project Link: [https://github.com/yourusername/portfolio-website](https://github
 
 ---
 
-Made with ❤️ by [Your Name](https://your-portfolio-url.com)
+Made with ❤️ by Pasans(https://your-portfolio-url.com)
